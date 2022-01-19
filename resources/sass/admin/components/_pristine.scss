@@ -1,0 +1,14 @@
+.has-error {
+    .form-control, .validate-input, .vc-container {
+        @apply ring-2 ring-red-500 ring-opacity-50 #{'!important'};
+    }
+}
+
+.form-control {
+    transition: all 0.25s ease;
+    outline: none !important;
+
+    &:focus {
+        @apply ring;
+    }
+}

@@ -1,0 +1,103 @@
+* {
+	box-sizing: border-box;
+}
+
+html, body {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	font-family: Helvetica, Arial, sans-serif;
+}
+
+body {
+	margin: 0;
+	padding: 20px 10px;
+}
+
+.drag-container {
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 1000;
+}
+
+.board {
+	position: relative;
+}
+
+.board-column {
+	position: absolute;
+	left: 0;
+	top: 0;
+	padding: 0 10px;
+	width: calc(100% / 4);
+	z-index: 1;
+}
+
+.board-column.muuri-item-releasing {
+	z-index: 2;
+}
+
+.board-column.muuri-item-dragging {
+	z-index: 3;
+	cursor: move;
+}
+
+.board-column-container {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+@media (max-width: 600px) {
+	.board-column-header {
+	text-indent: -1000px;
+	}
+}
+
+.board-column-content-wrapper {
+	position: relative;
+	padding: 8px 0;
+	height: calc(80vh - 90px);
+	overflow-y: auto;
+}
+
+.board-column-content {
+	position: relative;
+	min-height: 100%;
+}
+
+.board-item {
+	position: absolute;
+	width: calc(100% - 16px);
+	margin: 8px;
+	transition: opacity 0.2s ease;
+}
+
+.board-item.muuri-item-releasing {
+	z-index: 9998;
+	opacity: 0.8;
+}
+
+.board-item.muuri-item-dragging {
+	z-index: 9999;
+	opacity: 0.8;
+	cursor: move;
+}
+
+.board-item.muuri-item-hidden {
+	z-index: 0;
+}
+
+.board-item-content {
+	@apply shadow-xl p-3 gap-y-2 bg-white cursor-pointer relative rounded-none;
+}
+
+@media (max-width: 600px) {
+	.board-item-content {
+	text-align: center;
+	}
+	.board-item-content span {
+	display: none;
+	}
+}

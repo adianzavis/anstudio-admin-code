@@ -1,0 +1,40 @@
+.form-step {
+    transition: opacity 0.2s ease;
+    opacity: 1;
+
+    &.disappear {
+        opacity: 0;
+    }
+}
+
+.form-step-indicator {
+    @apply intro-x lg:text-center flex items-center mt-5 lg:mt-0 lg:block flex-1 z-10;
+
+    button {
+        @apply w-10 h-10 rounded-full btn text-gray-600 bg-gray-200 dark:bg-dark-1;
+    }
+
+    div {
+        @apply lg:w-32 text-base lg:mt-3 ml-3 lg:mx-auto text-gray-700 dark:text-gray-600;
+    }
+
+    &.active {
+        @apply intro-x lg:text-center flex items-center lg:block flex-1 z-10;
+
+        button {
+            @apply w-10 h-10 rounded-full btn btn-primary;
+        }
+
+        div {
+            @apply lg:w-32 font-medium text-base lg:mt-3 ml-3 lg:mx-auto;
+        }
+    }
+}
+
+.form-check-label {
+    margin-left: 0 !important;
+}
+
+.invoice-data-switch {
+    transition: opacity 0.2s ease;
+}

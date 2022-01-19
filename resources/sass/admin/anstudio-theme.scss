@@ -1,0 +1,83 @@
+.btn-primary {
+	@apply bg-theme-1;
+}
+
+body, html {
+    scroll-behavior: smooth !important;
+}
+
+.vc-svg-icon, .vc-arrow {
+    border: unset !important;
+}
+
+.vc-pane {
+    @apply bg-dark-2 rounded-lg;
+}
+
+.vc-container {
+    border: unset !important;
+}
+
+#project {
+    .short-description {
+        @apply overflow-hidden;
+
+        .description-content {
+            @apply overflow-hidden;
+            max-height: 400px;
+            min-height: 150px;
+            overflow: hidden;
+        }
+
+        .blur {
+            @apply absolute bottom-0 left-0 w-full h-56 bg-gradient-to-t from-dark-2 to-transparent z-50 flex justify-center items-end pb-5 cursor-pointer;
+        }
+    }
+}
+
+#wizard {
+    .top-navigation {
+        @apply flex flex-col lg:flex-row justify-center px-5 sm:px-20;
+
+        .item {
+            @apply lg:text-center flex items-center lg:block flex-1 z-10;
+
+            button {
+                @apply w-10 h-10 rounded-full btn text-gray-600 bg-gray-200 dark:bg-dark-1;
+            }
+
+            .label {
+                @apply lg:w-32 text-base lg:mt-3 ml-3 lg:mx-auto text-gray-700 dark:text-gray-600;
+            }
+
+            &.active {
+
+                button {
+                    @apply w-10 h-10 rounded-full btn btn-primary;
+                }
+
+                .label {
+                    @apply lg:w-32 font-medium text-base lg:mt-3 ml-3 lg:mx-auto;
+                }
+            }
+        }
+    }
+}
+
+#edit-form {
+    .left-navigation {
+        @apply p-5 border-t border-gray-200 dark:border-dark-5;
+
+        .item {
+            @apply flex items-center mt-5;
+
+            .icon {
+                @apply w-4 h-4 mr-2;
+            }
+
+            &.active {
+                @apply flex items-center text-theme-1 dark:text-theme-10 font-medium;
+            }
+        }
+    }
+}
